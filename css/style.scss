@@ -1,0 +1,131 @@
+
+$primary-color: #6c63ff;
+$bg-color: #f7f7f7;
+$text-color: #333;
+$border-radius: 12px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: $bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+
+  .title {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 2rem;
+  }
+
+  .test-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    .sentence {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: $text-color;
+    }
+
+    .input-box {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #ccc;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      resize: none;
+      outline: none;
+      margin-bottom: 1.5rem;
+
+      &:focus {
+        border-color: $primary-color;
+        box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+      }
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+
+      .stat {
+        text-align: center;
+
+        .number {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: $primary-color;
+        }
+
+        .label {
+          display: block;
+          font-size: 0.9rem;
+          color: #777;
+        }
+      }
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      background: $primary-color;
+      color: #fff;
+      border: none;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .test-box {
+    padding: 1.5rem;
+
+    .sentence {
+      font-size: 1rem;
+    }
+
+    .input-box {
+      font-size: 0.9rem;
+    }
+
+    .stats {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .stat {
+        .number {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+button[disabled]{
+    pointer-events: none;
+    opacity: 0.3;
+}
